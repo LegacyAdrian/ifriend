@@ -1,2 +1,2 @@
 # ifriend
-Panita Invisible 
+## Gestor para el juego panita Invisible
