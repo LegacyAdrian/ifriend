@@ -11,26 +11,30 @@ class userController {
 public function index() {
     //Obtener datos modelo
     $users = User::all();
-    echo'<h1>Listado de Users</h1>';
-    foreach ($users as $user) {
-        echo"<p>".$user->name."</p>";
-    }
+        global $blade;
+     echo $blade->view()->make('list',compact('users'))->render();
 }
 
 // Show the form f  or creating a new resource.
-public function create() {}
+/* public function create() {
+    global $blade;
+    echo $blade->view()->make('create')->render();;
+} */
 
 // Store a newly created resource in storage.
-public function store() {}
+public function store() {
+    var_dump($_POST);
+}
 
 // Display the specified resource.
 public function show($param) {
     $id = $param['id'];
     $user = User::find($id);
     if ($user) {
-        echo'<h1>El user es </h1>';
-        echo $user->name;
-    } else {
+        global $blade;
+        echo $blade->view()->make('show',compact('user'))->render();
+    } 
+    else {
         echo 'Usuario no encontrado anafabestia';
     }
 

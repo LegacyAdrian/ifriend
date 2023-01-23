@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HOME</h1>
-</body>
-</html>
+@extends('master')
+
+@section('title', 'Bienvenido a Ifriend')
+
+@section('content')
+    <h2>Tu gestor de amigo invisible</h2>
+    <a href="/user" class="btn btn-primary">Lista Usuarios </a>
+@endsection

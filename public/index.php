@@ -27,6 +27,13 @@ $router->map( 'GET', '/', function(){
 $router->map( 'GET', '/user', 'userController#index');
 
 $router->map( 'GET', '/user/[i:id]', 'userController#show');
+
+$router->map( 'GET', '/user/create', 'create'); 
+
+$router->map( 'POST', '/user', 'userController#store'); 
+
+/* $router->map( 'GET', '/user/create', 'userController#create');  */
+
 //End of list
 
 $match = $router->match();
@@ -39,7 +46,9 @@ if($match) {
      $controller->$action($match["params"]);
  } else {
      if(is_callable($match["target"])) call_user_func_array($match["target"], $match["params"]);
-     else require $match["target"];
+     else {
+        echo $blade->view()->make($match['target'])->render();
+     }
  }
 } else {
  echo "Ruta no válida";
