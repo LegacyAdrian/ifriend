@@ -22,14 +22,29 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
+              <?php if(isset($_SESSION['id'])): ?>
+                  
+        
               <li class="nav-item">
                 <a class="nav-link" href="/user">Usuarios</a>
               </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/party">Partidas</a>
+            </li>
+            <?php endif; ?>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <?php if(isset($_SESSION['name'])): ?>
+              <span>Hola <?php echo e($_SESSION['name']); ?></span>
+              <a href="/logout" class="btn btn-primary mx-3">Logout</a>
+            <?php else: ?>
+            <a href="/login" class="btn btn-primary mx-3">Login</a>
+            <?php endif; ?>
+          
           </div>
         </div>
       </nav>

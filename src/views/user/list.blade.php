@@ -10,7 +10,7 @@
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Contraseña</th>
-            <th scope="col">DEjAME</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
